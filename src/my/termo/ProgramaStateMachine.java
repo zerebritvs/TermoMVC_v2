@@ -6,6 +6,7 @@
 package my.termo;
 
 import javax.swing.JFrame;
+import my.programaVista.ProgramaVista;
 
 /**
  *
@@ -18,7 +19,7 @@ public class ProgramaStateMachine {
     public ProgramaStateMachine(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                currentState = new ProgramaWindow();
+                currentState = new ProgramaVista();
                 currentState.setVisible(true);
             }
         });

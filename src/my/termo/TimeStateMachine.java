@@ -6,6 +6,7 @@
 package my.termo;
 
 import javax.swing.JFrame;
+import my.timeVista.TimeVista;
 
 /**
  *
@@ -18,7 +19,7 @@ public class TimeStateMachine {
     public TimeStateMachine(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                currentState = new TimeWindow();
+                currentState = new TimeVista();
                 currentState.setVisible(true);
             }
         });

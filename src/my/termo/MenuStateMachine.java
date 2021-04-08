@@ -6,6 +6,7 @@
 package my.termo;
 
 import javax.swing.JFrame;
+import my.menuVista.MenuVista;
 import my.termoVista.TermoVista;
 
 /**
@@ -19,10 +20,17 @@ public class MenuStateMachine {
     public MenuStateMachine(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                currentState = new MenuWindow();
+                currentState = new MenuVista();
                 currentState.setVisible(true);
             }
         });
     }
     
+    /**
+     * Cierra la ventana del menu
+     */
+    public void close(){
+        currentState.setVisible(false);
+        currentState.dispose();
+    }
 }

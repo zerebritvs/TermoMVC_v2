@@ -5,6 +5,7 @@
  */
 package my.termo;
 
+import my.termoModelo.ModeloTermo;
 import my.termoVista.TermoVista;
 
 /**
@@ -17,7 +18,7 @@ public class Main {
     private static TermoStateMachine termoStateMachine;
     private static TimeStateMachine timeStateMachine;
     private static ProgramaStateMachine programaStateMachine;
-    
+    private ModeloTermo model;
      /**
      * @param args the command line arguments
      */
@@ -65,5 +66,8 @@ public class Main {
         return programaStateMachine;
     }
     
-    
+    public static void goTermo(){
+        menuStateMachine.close();
+        termoStateMachine = new TermoStateMachine();
+    }
 }

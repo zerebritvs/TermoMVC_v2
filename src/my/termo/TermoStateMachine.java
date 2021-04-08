@@ -6,6 +6,7 @@
 package my.termo;
 
 import javax.swing.JFrame;
+import my.termoVista.TermoVista;
 
 /**
  *
@@ -18,7 +19,7 @@ public class TermoStateMachine {
     public TermoStateMachine(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                currentState = new TermoWindow();
+                currentState = new TermoVista();
                 currentState.setVisible(true);
             }
         });
