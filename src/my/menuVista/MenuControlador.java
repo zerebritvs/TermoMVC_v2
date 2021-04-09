@@ -31,4 +31,12 @@ public class MenuControlador {
     public void goTermo(){
         Main.goTermo();
     }
+    
+    public void goTime(){
+        Main.goTime();
+    }
+    
+    public void goPrograma(){
+        Main.goPrograma();
+    }
 }

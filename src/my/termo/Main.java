@@ -19,7 +19,10 @@ public class Main {
     private static TimeStateMachine timeStateMachine;
     private static ProgramaStateMachine programaStateMachine;
     private ModeloTermo model;
-     /**
+    
+    
+    /**
+     * Inicializa la maquina de estados Menu
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -50,24 +53,83 @@ public class Main {
         
     }
     
+    /**
+     * Obtiene la maquina de estados Menu
+     * @return menuStateMachine
+     */
     public static MenuStateMachine getStateMachineMenu(){
         return menuStateMachine;
     }
     
+    /**
+     * Obtiene la maquina de estados Termo
+     * @return termoStateMachine
+     */
     public static TermoStateMachine getStateMachineTermo(){
         return termoStateMachine;
     }
     
+    /**
+     * Obtiene la maquina de estados Time
+     * @return timeStateMachine
+     */
     public static TimeStateMachine getStateMachineTime(){
         return timeStateMachine;
     }
     
+    /**
+     * Obtiene la maquina de estados Programa
+     * @return programaStateMachine
+     */
     public static ProgramaStateMachine getStateMachinePrograma(){
         return programaStateMachine;
     }
     
+    /**
+     * Cierra Menu y abre termo
+     */
     public static void goTermo(){
         menuStateMachine.close();
         termoStateMachine = new TermoStateMachine();
+    }
+    
+    /**
+     * Cierra Menu y abre Time
+     */
+    public static void goTime(){
+        menuStateMachine.close();
+        timeStateMachine = new TimeStateMachine();
+    }
+    
+    /**
+     * Cierra Menu y abre Programa
+     */
+    public static void goPrograma(){
+        menuStateMachine.close();
+        programaStateMachine = new ProgramaStateMachine();
+    }
+    
+    /**
+     * Cierra Time y abre Menu
+     */
+    public static void goMenuFromTime(){
+        timeStateMachine.close();
+        menuStateMachine = new MenuStateMachine();
+    }
+    
+    /**
+     * Cierra Termo y abre Menu
+     */
+    public static void goMenuFromTermo(){
+        termoStateMachine.close();
+        menuStateMachine = new MenuStateMachine();
+    }
+    
+    /**
+     * Cierra Programa y abre Menu
+     */
+    public static void goMenuFromPrograma(){
+        programaStateMachine.close();
+        menuStateMachine = new MenuStateMachine();
     }
 }

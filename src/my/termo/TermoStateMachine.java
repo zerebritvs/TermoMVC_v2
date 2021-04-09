@@ -25,4 +25,12 @@ public class TermoStateMachine {
         });
     }
     
+    /**
+     * Cierra la ventana del termo
+     */
+    public void close(){
+        currentState.setVisible(false);
+        currentState.dispose();
+    }
+    
 }

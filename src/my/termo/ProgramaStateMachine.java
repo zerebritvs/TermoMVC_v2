@@ -25,4 +25,12 @@ public class ProgramaStateMachine {
         });
     }
     
+    /**
+     * Cierra la ventana del gestor de programas
+     */
+    public void close(){
+        currentState.setVisible(false);
+        currentState.dispose();
+    }
+    
 }

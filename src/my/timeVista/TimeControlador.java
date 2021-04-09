@@ -6,6 +6,7 @@
 package my.timeVista;
 
 import my.menuVista.MenuVista;
+import my.termo.Main;
 import my.termoModelo.ModeloTermo;
 
 /**
@@ -26,5 +27,9 @@ public class TimeControlador {
         
         miVista = v;
         miModelo = m;
+    }
+    
+    public void goMenuFromTime(){
+        Main.goMenuFromTime();
     }
 }

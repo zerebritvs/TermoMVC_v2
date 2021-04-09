@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
+import my.termo.Main;
 import my.termoModelo.Programa;
 
 /**
@@ -79,6 +80,13 @@ public class ControladorTermo {
         miVista.getSpinnerMinima().setValue(0);
         miVista.getSpinnerMaxima().setValue(0);
         
+    }
+    
+    /**
+     * Abre a Menu y cierra Termo
+     */
+    public void goMenuFromTermo(){
+        Main.goMenuFromTermo();
     }
     
     /**

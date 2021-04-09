@@ -25,4 +25,12 @@ public class TimeStateMachine {
         });
     }
     
+    /**
+     * Cierra la ventana de la configuracion basica
+     */
+    public void close(){
+        currentState.setVisible(false);
+        currentState.dispose();
+    }
+    
 }

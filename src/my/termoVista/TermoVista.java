@@ -85,9 +85,11 @@ public class TermoVista extends javax.swing.JFrame {
         jToggleButtonManual = new javax.swing.JToggleButton();
         jToggleButtonAuto = new javax.swing.JToggleButton();
         jToggleButtonEdit = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 184));
+        setPreferredSize(new java.awt.Dimension(950, 420));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         jLabelLunes.setText("Lunes");
@@ -360,6 +362,16 @@ public class TermoVista extends javax.swing.JFrame {
         });
         jPanelOpciones.add(jToggleButtonEdit);
 
+        jButton1.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/termoVista/BarrasMenu2.png"))); // NOI18N
+        jButton1.setText("Menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanelOpciones.add(jButton1);
+
         getContentPane().add(jPanelOpciones);
 
         pack();
@@ -424,6 +436,10 @@ public class TermoVista extends javax.swing.JFrame {
     private void jSpinnerMaximaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerMaximaStateChanged
         miControl.editTemperatura(1);
     }//GEN-LAST:event_jSpinnerMaximaStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        miControl.goMenuFromTermo();
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
      * Obtiene el jPanelDias
@@ -637,6 +653,7 @@ public class TermoVista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonIniciar;
     private javax.swing.JComboBox<String> jComboBoxPrograms;
     private javax.swing.JLabel jLabelActualProgram;
