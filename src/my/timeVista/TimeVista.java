@@ -59,9 +59,12 @@ public class TimeVista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(0, 1));
 
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Configuración Básica");
-        jPanel1.add(jLabel3);
+        jPanel1.add(jLabel3, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1);
 
@@ -109,6 +112,7 @@ public class TimeVista extends javax.swing.JFrame {
 
         jPanel3.add(jPanel6);
 
+        jButton1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jButton1.setText("Cancelar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,6 +121,7 @@ public class TimeVista extends javax.swing.JFrame {
         });
         jPanel7.add(jButton1);
 
+        jButton2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jButton2.setText("Aceptar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
