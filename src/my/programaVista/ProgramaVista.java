@@ -5,8 +5,11 @@
  */
 package my.programaVista;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import my.termoModelo.ModeloTermo;
-import my.termoVista.ControladorTermo;
 
 /**
  *
@@ -19,16 +22,15 @@ public class ProgramaVista extends javax.swing.JFrame {
      * Creates new form ProgramaVista
      */
     private ProgramaControlador miControl;
-    private ModeloTermo miModelo;
     
     /**
      * Constructor de ProgramaVista
      */
-    public ProgramaVista() {
+    public ProgramaVista(ModeloTermo miModelo) {
         
         initComponents();
-        miModelo = new ModeloTermo();
         miControl = new ProgramaControlador(this, miModelo);
+        miControl.initPrograma();
     }
       
 
@@ -58,6 +60,7 @@ public class ProgramaVista extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jSpinner2 = new javax.swing.JSpinner();
+        jButton4 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -73,7 +76,7 @@ public class ProgramaVista extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(950, 550));
+        setPreferredSize(new java.awt.Dimension(950, 575));
         getContentPane().setLayout(new java.awt.GridLayout(0, 1));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -85,7 +88,7 @@ public class ProgramaVista extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
 
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setText("Programa Actual:");
@@ -154,13 +157,17 @@ public class ProgramaVista extends javax.swing.JFrame {
 
         jSpinner2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
 
+        jButton4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jButton4.setText("Guardar Programa");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
+                .addContainerGap(124, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
                     .addComponent(jLabel4)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -174,12 +181,12 @@ public class ProgramaVista extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jSpinner1)
                             .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(94, 94, 94))
+                .addGap(96, 96, 96))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -193,7 +200,9 @@ public class ProgramaVista extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel5);
@@ -254,11 +263,21 @@ public class ProgramaVista extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/my/programaVista/BarrasMenu2.png"))); // NOI18N
         jButton1.setText("Menu");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel8.add(jButton1);
 
         jButton2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jButton2.setText("Añadir  Programa");
         jButton2.setPreferredSize(new java.awt.Dimension(180, 33));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel8.add(jButton2);
 
         jPanel3.add(jPanel8);
@@ -285,45 +304,60 @@ public class ProgramaVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProgramaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProgramaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProgramaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProgramaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        miControl.goMenu();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ProgramaVista().setVisible(true);
-            }
-        });
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        miControl.nuevoPrograma();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    
+    /**
+     * Obtiene el jPanelMedio
+     * @return jPanelMedio
+     */
+    public JPanel getJPanelMedio(){
+        return jPanel5;
+    }
+    
+    /**
+     * Obtiene el jPanelDerecha
+     * @return jPanelDerecha
+     */
+    public JPanel getJPanelDerecha(){
+        return jPanel6;
+    }
+    
+    /**
+     * Obtiene el jComboBoxProgramas
+     * @return jComboBoxProgramas
+     */
+    public JComboBox getJComboBoxProgramas(){
+        return jComboBox1;
+    }
+    
+    /**
+     * Obtiene el jTextFieldNombre
+     * @return jTextFieldNombre
+     */
+    public JTextField getJTextFieldNombre(){
+        return jTextField1;
+    }
+    
+    /**
+     * Obtiene el jButtonNombre
+     * @return jButtonNombre
+     */
+    public JButton getJButtonNombre(){
+        return jButton3;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -22,15 +22,13 @@ import my.termoModelo.ModeloTermo;
 public class TermoVista extends javax.swing.JFrame {
     
     private ControladorTermo miControl;
-    private ModeloTermo miModelo;
     
     /**
-     * Constructor de VistaUI
+     * Constructor de TermoVista
      */
-    public TermoVista() {
+    public TermoVista(ModeloTermo miModelo) {
         
         initComponents();
-        miModelo = new ModeloTermo();
         miControl = new ControladorTermo(this, miModelo);
         miControl.initTermo();
         miControl.setDayOfWeek();
@@ -438,7 +436,7 @@ public class TermoVista extends javax.swing.JFrame {
     }//GEN-LAST:event_jSpinnerMaximaStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        miControl.goMenuFromTermo();
+        miControl.goMenu();
     }//GEN-LAST:event_jButton1ActionPerformed
     
     /**

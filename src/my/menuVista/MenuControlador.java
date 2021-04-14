@@ -5,7 +5,7 @@
  */
 package my.menuVista;
 
-import my.termo.Main;
+import my.termo.WindowStateMachine;
 import my.termoModelo.ModeloTermo;
 
 /**
@@ -28,15 +28,17 @@ public class MenuControlador {
         miModelo = m;
     }
     
-    public void goTermo(){
-        Main.goTermo();
-    }
-    
     public void goTime(){
-        Main.goTime();
+        WindowStateMachine.goTime();
     }
     
     public void goPrograma(){
-        Main.goPrograma();
+        WindowStateMachine.goPrograma();
     }
+    
+    public void goTermo(){
+        WindowStateMachine.goTermo();
+    }
+    
+    
 }

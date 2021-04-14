@@ -5,8 +5,9 @@
  */
 package my.timeVista;
 
+import javax.swing.JComboBox;
+import javax.swing.JSpinner;
 import my.termoModelo.ModeloTermo;
-import my.termoVista.ControladorTermo;
 
 /**
  *
@@ -19,16 +20,15 @@ public class TimeVista extends javax.swing.JFrame {
      * Creates new form TimeVista
      */
     private TimeControlador miControl;
-    private ModeloTermo miModelo;
     
     /**
      * Constructor de TimeVista
      */
-    public TimeVista() {
+    public TimeVista(ModeloTermo miModelo) {
         
         initComponents();
-        miModelo = new ModeloTermo();
         miControl = new TimeControlador(this, miModelo);
+        miControl.initTime();
     }
       
 
@@ -46,7 +46,10 @@ public class TimeVista extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jSpinner1 = new javax.swing.JSpinner();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jSpinner2 = new javax.swing.JSpinner();
         jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -71,19 +74,24 @@ public class TimeVista extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.GridLayout(0, 1));
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel1.setText("Cambiar hora:");
+        jLabel1.setText("Cambiar hora/s:");
         jPanel4.add(jLabel1);
 
-        jTextField1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jTextField1.setText("12:12");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jTextField1);
+        jSpinner1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinner1.setPreferredSize(new java.awt.Dimension(70, 27));
+        jPanel4.add(jSpinner1);
 
         jPanel2.add(jPanel4);
+
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabel4.setText("Cambiar minuto/s:");
+        jPanel8.add(jLabel4);
+
+        jSpinner2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinner2.setPreferredSize(new java.awt.Dimension(70, 27));
+        jPanel8.add(jSpinner2);
+
+        jPanel2.add(jPanel8);
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabel2.setText("Seleccionar día:");
@@ -107,7 +115,7 @@ public class TimeVista extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 46, Short.MAX_VALUE)
+            .addGap(0, 74, Short.MAX_VALUE)
         );
 
         jPanel3.add(jPanel6);
@@ -137,52 +145,41 @@ public class TimeVista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        miControl.goMenuFromTime();
+        miControl.goMenu();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        miControl.goMenuFromTime();
+        miControl.cambiaHoraDias();
+        miControl.goMenu();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    
     /**
-     * @param args the command line arguments
+     * Obtiene el Spinner de horas
+     * @return jSpinner1
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TimeVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TimeVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TimeVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TimeVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TimeVista().setVisible(true);
-            }
-        });
+    public JSpinner getJSpinnerHoras(){
+        return jSpinner1;
     }
+    
+    /**
+     * Obtiene el Spinner de minutos
+     * @return jSpinner2
+     */
+    public JSpinner getJSpinnerMinutos(){
+        return jSpinner2;
+    }
+    
+    /**
+     * Obtiene el ComboBox de dias
+     * @return jComboBox1
+     */
+    public JComboBox getJComboBoxDias(){
+        return jComboBox1;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -191,6 +188,7 @@ public class TimeVista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -198,6 +196,8 @@ public class TimeVista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     // End of variables declaration//GEN-END:variables
 }

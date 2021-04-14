@@ -6,7 +6,6 @@
 package my.menuVista;
 
 import my.termoModelo.ModeloTermo;
-import my.termoVista.ControladorTermo;
 
 /**
  *
@@ -27,7 +26,6 @@ public class MenuVista extends javax.swing.JFrame {
     public MenuVista() {
         
         initComponents();
-        miModelo = new ModeloTermo();
         miControl = new MenuControlador(this, miModelo);
     }
 

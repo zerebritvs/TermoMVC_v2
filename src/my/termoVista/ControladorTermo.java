@@ -9,12 +9,9 @@ import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JPanel;
 import my.termoModelo.ModeloTermo;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JToggleButton;
-import my.termo.Main;
+import my.termo.WindowStateMachine;
 import my.termoModelo.Programa;
 
 /**
@@ -85,8 +82,8 @@ public class ControladorTermo {
     /**
      * Abre a Menu y cierra Termo
      */
-    public void goMenuFromTermo(){
-        Main.goMenuFromTermo();
+    public void goMenu(){
+        WindowStateMachine.goMenu();
     }
     
     /**
@@ -326,21 +323,17 @@ public class ControladorTermo {
      */
     public void setLocalHour(){
         
-        LocalDateTime localDate = LocalDateTime.now();
-        int hours = localDate.getHour();
-        int minutes = localDate.getMinute();
-        
-        if(hours < 10 && minutes < 10){
-            miVista.getTextFieldHora().setText("0" + hours + ":0" + minutes);
+        if(miModelo.getHoras() < 10 && miModelo.getMinutos() < 10){
+            miVista.getTextFieldHora().setText("0" + miModelo.getHoras() + ":0" + miModelo.getMinutos());
         }
-        else if(hours < 10 && minutes >= 10){
-            miVista.getTextFieldHora().setText("0" + hours + ":" + minutes);
+        else if(miModelo.getHoras() < 10 && miModelo.getMinutos() >= 10){
+            miVista.getTextFieldHora().setText("0" + miModelo.getHoras() + ":" + miModelo.getMinutos());
         }
-        else if(hours >= 10 && minutes < 10){
-            miVista.getTextFieldHora().setText(hours + ":0" + minutes);
+        else if(miModelo.getHoras() >= 10 && miModelo.getMinutos() < 10){
+            miVista.getTextFieldHora().setText(miModelo.getHoras() + ":0" + miModelo.getMinutos());
         }
         else{
-            miVista.getTextFieldHora().setText(hours + ":" + minutes);
+            miVista.getTextFieldHora().setText(miModelo.getHoras() + ":" + miModelo.getMinutos());
         }
         
     }
@@ -350,9 +343,7 @@ public class ControladorTermo {
      */
     public void setDayOfWeek(){
         
-        int day = LocalDate.now().getDayOfWeek().getValue();
-        
-        switch(day){
+        switch(miModelo.getDia()){
             
             case 1: //Lunes
                 

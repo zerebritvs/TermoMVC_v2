@@ -5,13 +5,12 @@
  */
 package my.timeVista;
 
-import my.menuVista.MenuVista;
-import my.termo.Main;
+import my.termo.WindowStateMachine;
 import my.termoModelo.ModeloTermo;
 
 /**
  *
- * @author Juan Antnio Pagés
+ * @author Juan Antonio Pagés
  * @author Fernando San José
  */
 public class TimeControlador {
@@ -29,7 +28,28 @@ public class TimeControlador {
         miModelo = m;
     }
     
-    public void goMenuFromTime(){
-        Main.goMenuFromTime();
+    /**
+     * Inicializa los componentes
+     */
+    public void initTime(){
+        miVista.getJSpinnerHoras().setValue(miModelo.getHoras());
+        miVista.getJSpinnerMinutos().setValue(miModelo.getMinutos());
+        miVista.getJComboBoxDias().setSelectedIndex(miModelo.getDia() - 1);
+    }
+    
+    /**
+     * Cierra Vista y abre Menu
+     */
+    public void goMenu(){
+        WindowStateMachine.goMenu();
+    }
+    
+    /**
+     * Almacena las horas y los dias cambiados
+     */
+    public void cambiaHoraDias(){
+        miModelo.setHoras((int) miVista.getJSpinnerHoras().getValue());
+        miModelo.setMinutos((int) miVista.getJSpinnerMinutos().getValue());
+        miModelo.setDia((miVista.getJComboBoxDias().getSelectedIndex())+ 1);
     }
 }

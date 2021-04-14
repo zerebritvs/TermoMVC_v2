@@ -5,6 +5,8 @@
  */
 package my.termoModelo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +19,9 @@ public class ModeloTermo {
     private boolean power;
     private int modo;
     private ArrayList<Programa> programas;
+    private int dia;
+    private int horas;
+    private int minutos;
     
     /**
      * Constructor de ModeloTermo
@@ -25,7 +30,11 @@ public class ModeloTermo {
         
         power = false;
         modo = 0;
-        programas = new ArrayList<>(3);
+        dia = LocalDate.now().getDayOfWeek().getValue();
+        LocalDateTime localDate = LocalDateTime.now();
+        horas = localDate.getHour();
+        minutos = localDate.getMinute();
+        programas = new ArrayList<>();
         
         for(int i=0; i<3;i++){
             
@@ -80,6 +89,54 @@ public class ModeloTermo {
      */
     public void setPrograma(ArrayList<Programa> programas){
         this.programas = programas;
+    }
+    
+    /**
+     * Almacena el dia
+     * @param dia
+     */
+    public void setDia(int dia){
+      this.dia = dia;
+    }
+    
+    /**
+     * Obtiene el dia del sistema
+     * @return dia
+     */
+    public int getDia(){
+        return this.dia;
+    }
+    
+    /**
+     * Almacena las horas
+     * @param horas
+     */
+    public void setHoras(int horas){
+      this.horas = horas;
+    }
+    
+    /**
+     * Obtiene la horas
+     * @return horas
+     */
+    public int getHoras(){
+        return this.horas;
+    }
+    
+    /**
+     * Almacena los minutos
+     * @param minutos
+     */
+    public void setMinutos(int minutos){
+      this.minutos = minutos;
+    }
+    
+    /**
+     * Obtiene los minutos
+     * @return minutos
+     */
+    public int getMinutos(){
+        return this.minutos;
     }
     
 }
