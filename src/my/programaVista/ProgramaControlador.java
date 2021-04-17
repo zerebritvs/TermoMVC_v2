@@ -104,14 +104,14 @@ public class ProgramaControlador {
         
         for(int j = 0; j < botones.length; j++){
             
-            if(nuevoPrograma.getProgramButtons().get(j)){
-                botones[j].setSelected(true);
+            if(botones[j].isSelected()){
+                nuevoPrograma.getProgramButtons().set(j, true);
                 
             }else{
-                botones[j].setSelected(false);
+                nuevoPrograma.getProgramButtons().set(j, false);
             }
-            
         }
+        
         
         miVista.getJComboBoxProgramas().addItem(nuevoPrograma);
         
@@ -119,9 +119,16 @@ public class ProgramaControlador {
         
         miVista.getJButtonGuarda().setText("Guardado");
         
-        miVista.getJTextFieldNombreAdd().setText("Nombre");
+        miVista.getJTextFieldNombreAdd().setText("Programa");
         miVista.getJSpinnerMax().setValue(19);
         miVista.getJSpinnerMin().setValue(5);
+        
+        miVista.getJToggleButton1().setSelected(false);
+        miVista.getJToggleButton2().setSelected(false);
+        miVista.getJToggleButton3().setSelected(false);
+        miVista.getJToggleButton4().setSelected(false);
+        miVista.getJToggleButton5().setSelected(false);
+        miVista.getJToggleButton6().setSelected(false);
         
         setPanelEnabled(miVista.getJPanelMedio(), false);
         setPanelEnabled(miVista.getJPanelDerecha(), false);

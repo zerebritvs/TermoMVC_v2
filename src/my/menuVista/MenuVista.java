@@ -49,6 +49,7 @@ public class MenuVista extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 350));
         setPreferredSize(new java.awt.Dimension(600, 425));
         getContentPane().setLayout(new java.awt.GridLayout(0, 1));
 

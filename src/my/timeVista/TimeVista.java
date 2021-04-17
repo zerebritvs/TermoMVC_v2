@@ -60,6 +60,8 @@ public class TimeVista extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 360));
+        setPreferredSize(new java.awt.Dimension(460, 400));
         getContentPane().setLayout(new java.awt.GridLayout(0, 1));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -73,8 +75,8 @@ public class TimeVista extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(0, 1));
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel1.setText("Cambiar hora/s:");
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel1.setText("Cambiar horas:");
         jPanel4.add(jLabel1);
 
         jSpinner1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -84,8 +86,8 @@ public class TimeVista extends javax.swing.JFrame {
 
         jPanel2.add(jPanel4);
 
-        jLabel4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel4.setText("Cambiar minuto/s:");
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel4.setText("Cambiar minutos:");
         jPanel8.add(jLabel4);
 
         jSpinner2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -95,8 +97,8 @@ public class TimeVista extends javax.swing.JFrame {
 
         jPanel2.add(jPanel8);
 
-        jLabel2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jLabel2.setText("Seleccionar día:");
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabel2.setText("Cambiar día:");
         jPanel5.add(jLabel2);
 
         jComboBox1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N

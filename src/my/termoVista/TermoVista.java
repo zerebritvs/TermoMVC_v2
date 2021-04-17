@@ -86,8 +86,8 @@ public class TermoVista extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(400, 184));
-        setPreferredSize(new java.awt.Dimension(1020, 420));
+        setMinimumSize(new java.awt.Dimension(1000, 350));
+        setPreferredSize(new java.awt.Dimension(1040, 420));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         jLabelLunes.setText("Lunes");
@@ -118,13 +118,13 @@ public class TermoVista extends javax.swing.JFrame {
         jPanelPantalla.setLayout(new java.awt.GridLayout(1, 0));
 
         jTextFieldHora.setEditable(false);
-        jTextFieldHora.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        jTextFieldHora.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
         jTextFieldHora.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldHora.setText("Hora");
         jPanelPantalla.add(jTextFieldHora);
 
         jTextFieldTemp.setEditable(false);
-        jTextFieldTemp.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        jTextFieldTemp.setFont(new java.awt.Font("Ubuntu", 0, 48)); // NOI18N
         jTextFieldTemp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextFieldTemp.setText("19ºC");
         jTextFieldTemp.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +140,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jPanelSelectProgram.setPreferredSize(new java.awt.Dimension(150, 123));
 
-        jLabelActualProgram.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabelActualProgram.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabelActualProgram.setText("Programa actual:");
 
         jComboBoxPrograms.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -241,7 +241,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jPanel5.add(jPanelSelectHoras);
 
-        jLabelHoras.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabelHoras.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabelHoras.setText("Horas:");
 
         jSpinnerSelectHora.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -255,7 +255,7 @@ public class TermoVista extends javax.swing.JFrame {
             }
         });
 
-        jLabelMinima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabelMinima.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabelMinima.setText("Mínima:");
 
         jSpinnerMinima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -266,7 +266,7 @@ public class TermoVista extends javax.swing.JFrame {
             }
         });
 
-        jLabelMaxima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabelMaxima.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabelMaxima.setText("Máxima:");
 
         jSpinnerMaxima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
@@ -299,7 +299,7 @@ public class TermoVista extends javax.swing.JFrame {
                         .addComponent(jLabelMaxima)
                         .addGap(5, 5, 5)
                         .addComponent(jSpinnerMaxima, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
         jPanelSelectInitLayout.setVerticalGroup(
             jPanelSelectInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
