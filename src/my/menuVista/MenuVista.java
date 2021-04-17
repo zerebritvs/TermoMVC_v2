@@ -54,9 +54,9 @@ public class MenuVista extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Menu del Termostato");
+        jLabel1.setText("Menú del Termostato");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel1, java.awt.BorderLayout.CENTER);
 

@@ -64,7 +64,7 @@ public class TimeVista extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Configuración Básica");
         jPanel1.add(jLabel3, java.awt.BorderLayout.CENTER);
@@ -78,6 +78,7 @@ public class TimeVista extends javax.swing.JFrame {
         jPanel4.add(jLabel1);
 
         jSpinner1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 23, 1));
         jSpinner1.setPreferredSize(new java.awt.Dimension(70, 27));
         jPanel4.add(jSpinner1);
 
@@ -88,6 +89,7 @@ public class TimeVista extends javax.swing.JFrame {
         jPanel8.add(jLabel4);
 
         jSpinner2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
         jSpinner2.setPreferredSize(new java.awt.Dimension(70, 27));
         jPanel8.add(jSpinner2);
 

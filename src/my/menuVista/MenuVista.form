@@ -36,10 +36,10 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="36" style="0"/>
+              <Font name="Ubuntu" size="36" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Menu del Termostato"/>
+            <Property name="text" type="java.lang.String" value="Men&#xfa; del Termostato"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Constraints>

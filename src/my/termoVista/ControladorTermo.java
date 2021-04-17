@@ -73,9 +73,13 @@ public class ControladorTermo {
         miVista.getLabelIcono().setIcon(new ImageIcon(getClass().getResource("/my/termoVista/Vacio.png")));
         
         miVista.getToggleButtonOn().setText("ON  ");
+
         
-        miVista.getSpinnerMinima().setValue(0);
-        miVista.getSpinnerMaxima().setValue(0);
+        for(int i = 0; i < miModelo.getPrograma().size(); i++){
+            miVista.getComboBoxPrograms().addItem(miModelo.getPrograma().get(i)); 
+        }
+        
+        selectPrograms();
         
     }
     
@@ -214,7 +218,7 @@ public class ControladorTermo {
         
         for(int i = 0; i < 2; i++){
             
-            if(i==0){
+            if(i == 0){
                 miVista.getSpinnerMinima().setValue(temp.getProgramTemps().get(i));
             }else{
                 miVista.getSpinnerMaxima().setValue(temp.getProgramTemps().get(i));
@@ -249,29 +253,8 @@ public class ControladorTermo {
         
         int programa = miVista.getComboBoxPrograms().getSelectedIndex();
         
-        switch(programa){
-            
-            case 0:
-                
-                boolean select = miModelo.getPrograma().get(0).getProgramButtons().get(button);
-                miModelo.getPrograma().get(0).getProgramButtons().set(button, !select);
-                
-                break;
-            
-            case 1:
-                
-                boolean select2 = miModelo.getPrograma().get(1).getProgramButtons().get(button);
-                miModelo.getPrograma().get(1).getProgramButtons().set(button, !select2);
-                
-                break;
-                
-            case 2:
-                
-                boolean select3 = miModelo.getPrograma().get(2).getProgramButtons().get(button);
-                miModelo.getPrograma().get(2).getProgramButtons().set(button, !select3);
-                
-                break;  
-        }
+        boolean select = miModelo.getPrograma().get(programa).getProgramButtons().get(button);
+        miModelo.getPrograma().get(programa).getProgramButtons().set(button, !select);
         
     }
     
@@ -283,38 +266,11 @@ public class ControladorTermo {
         
         int programa = miVista.getComboBoxPrograms().getSelectedIndex();
         
-        switch(programa){
-            
-            case 0:
-                
-                if(temp == 0){
-                    miModelo.getPrograma().get(0).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMinima().getValue());
+        if(temp == 0){
+                    miModelo.getPrograma().get(programa).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMinima().getValue());
                 }else{
-                    miModelo.getPrograma().get(0).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMaxima().getValue());
+                    miModelo.getPrograma().get(programa).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMaxima().getValue());
                 }
-                
-                break;
-            
-            case 1:
-                
-                if(temp == 0){
-                    miModelo.getPrograma().get(1).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMinima().getValue());
-                }else{
-                    miModelo.getPrograma().get(1).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMaxima().getValue());
-                }
-                
-                break;
-                
-            case 2:
-                
-                if(temp == 0){
-                    miModelo.getPrograma().get(2).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMinima().getValue());
-                }else{
-                    miModelo.getPrograma().get(2).getProgramTemps().set(temp, (Integer)miVista.getSpinnerMaxima().getValue());
-                }
-                            
-                break;
-        }   
         
     }
     

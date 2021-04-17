@@ -7,8 +7,10 @@ package my.programaVista;
 
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.JToggleButton;
 import my.termo.WindowStateMachine;
 import my.termoModelo.ModeloTermo;
+import my.termoModelo.Programa;
 
 /**
  *
@@ -50,13 +52,11 @@ public class ProgramaControlador {
     public void initPrograma(){
         setPanelEnabled(miVista.getJPanelMedio(), false);
         setPanelEnabled(miVista.getJPanelDerecha(), false);
-        miVista.getJComboBoxProgramas().removeAllItems();
         
-        for(int i = 0; i < 3; i++){
-            miVista.getJComboBoxProgramas().addItem(miModelo.getPrograma().get(i));
+        for(int i = 0; i < miModelo.getPrograma().size(); i++){
+            miVista.getJComboBoxProgramas().addItem(miModelo.getPrograma().get(i));   
         }
-        
-            
+          
     }
     
     /**
@@ -66,16 +66,68 @@ public class ProgramaControlador {
         int index = miVista.getJComboBoxProgramas().getSelectedIndex();
         String  nuevoNombre = miVista.getJTextFieldNombre().getText();
         for(int i = 0; i < miModelo.getPrograma().size(); i++){
-            if(i==index){
-               //nuevoNombre = new Programa();
-               //nuevoNombre = (Programa)miModelo.getPrograma().get(i);
+            if(i == index){
+               miModelo.getPrograma().get(index).setNombre(nuevoNombre);
             }
         }
+        miVista.getJComboBoxProgramas().updateUI();
     }
-    
+    /**
+     * Habilita la zona para añadir nuevo programa
+     */
     public void nuevoPrograma(){
         setPanelEnabled(miVista.getJPanelMedio(), true);
         setPanelEnabled(miVista.getJPanelDerecha(), true);
+        miVista.getJButtonGuarda().setText("Guardar Programa");
+    }
+    
+    /**
+     * Guarda nuevo programa 
+     */
+    public void guardaPrograma(){
+        
+        Programa nuevoPrograma = new Programa();
+        
+        miModelo.getPrograma().add(nuevoPrograma);
+        
+        nuevoPrograma.setNombre(miVista.getJTextFieldNombreAdd().getText());
+        
+        nuevoPrograma.getProgramTemps().set(0, (Integer)miVista.getJSpinnerMin().getValue());
+        nuevoPrograma.getProgramTemps().set(1, (Integer)miVista.getJSpinnerMax().getValue());
+        
+        Component[]comps = miVista.getJPanelDerecha().getComponents();
+        JToggleButton []botones = new JToggleButton [6];
+        
+        for(int i = 0; i < comps.length; i++){
+            botones[i] = (JToggleButton)comps[i];
+        }
+        
+        for(int j = 0; j < botones.length; j++){
+            
+            if(nuevoPrograma.getProgramButtons().get(j)){
+                botones[j].setSelected(true);
+                
+            }else{
+                botones[j].setSelected(false);
+            }
+            
+        }
+        
+        miVista.getJComboBoxProgramas().addItem(nuevoPrograma);
+        
+        miVista.getJComboBoxProgramas().updateUI();
+        
+        miVista.getJButtonGuarda().setText("Guardado");
+        
+        miVista.getJTextFieldNombreAdd().setText("Nombre");
+        miVista.getJSpinnerMax().setValue(19);
+        miVista.getJSpinnerMin().setValue(5);
+        
+        setPanelEnabled(miVista.getJPanelMedio(), false);
+        setPanelEnabled(miVista.getJPanelDerecha(), false);
+        
+        
+    
     }
     
     /**

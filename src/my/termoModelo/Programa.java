@@ -16,11 +16,14 @@ public class Programa {
     
     private ArrayList<Boolean> botones;
     private ArrayList<Integer> temps;
+    private String nombre;
     
     /**
      * Constructor de Programa
      */
     public Programa(){
+        
+        nombre = "Programa";
         
         botones = new ArrayList<>(6);
         temps = new ArrayList<>(2);
@@ -29,9 +32,8 @@ public class Programa {
             botones.add(false);
         }
         
-        for(int i = 0; i < 2; i++){
-            temps.add(0);
-        }
+        temps.add(0, 5);
+        temps.add(1, 19);
     }
     
     /**
@@ -64,6 +66,23 @@ public class Programa {
      */
     public void setProgramButtons(ArrayList<Boolean> botones){
         this.botones = botones;
+    }
+    
+    /**
+     * Obtiene el nombre del programa
+     * @return nombre
+     */
+    @Override
+    public String toString(){
+        return nombre;
+    }
+    
+    /**
+     * Almacena el nombre del programa
+     * @return nombreNuevo
+     */
+    public void setNombre(String nombreNuevo){
+        this.nombre = nombreNuevo;
     }
     
 }

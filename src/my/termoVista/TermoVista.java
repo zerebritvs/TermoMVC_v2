@@ -87,7 +87,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 184));
-        setPreferredSize(new java.awt.Dimension(950, 420));
+        setPreferredSize(new java.awt.Dimension(1020, 420));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         jLabelLunes.setText("Lunes");
@@ -140,9 +140,10 @@ public class TermoVista extends javax.swing.JFrame {
 
         jPanelSelectProgram.setPreferredSize(new java.awt.Dimension(150, 123));
 
+        jLabelActualProgram.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabelActualProgram.setText("Programa actual:");
 
-        jComboBoxPrograms.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Programa 1", "Programa 2", "Programa 3" }));
+        jComboBoxPrograms.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jComboBoxPrograms.setAlignmentY(1.0F);
         jComboBoxPrograms.setBorder(null);
         jComboBoxPrograms.addActionListener(new java.awt.event.ActionListener() {
@@ -158,8 +159,8 @@ public class TermoVista extends javax.swing.JFrame {
             .addGroup(jPanelSelectProgramLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(jPanelSelectProgramLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelActualProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxPrograms, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxPrograms, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelActualProgram))
                 .addContainerGap(222, Short.MAX_VALUE))
         );
         jPanelSelectProgramLayout.setVerticalGroup(
@@ -169,7 +170,7 @@ public class TermoVista extends javax.swing.JFrame {
                 .addComponent(jLabelActualProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxPrograms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jPanel5.add(jPanelSelectProgram);
@@ -180,7 +181,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jToggleButton1.setText("0-3");
         jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setPreferredSize(new java.awt.Dimension(70, 25));
+        jToggleButton1.setPreferredSize(new java.awt.Dimension(80, 25));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -190,7 +191,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jToggleButton2.setText("4-7");
         jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setPreferredSize(new java.awt.Dimension(70, 25));
+        jToggleButton2.setPreferredSize(new java.awt.Dimension(80, 25));
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton2ActionPerformed(evt);
@@ -200,7 +201,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jToggleButton3.setText("8-11");
         jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setPreferredSize(new java.awt.Dimension(70, 25));
+        jToggleButton3.setPreferredSize(new java.awt.Dimension(80, 25));
         jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton3ActionPerformed(evt);
@@ -210,7 +211,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jToggleButton4.setText("12-15");
         jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton4.setPreferredSize(new java.awt.Dimension(70, 25));
+        jToggleButton4.setPreferredSize(new java.awt.Dimension(80, 25));
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton4ActionPerformed(evt);
@@ -220,7 +221,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jToggleButton5.setText("16-19");
         jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton5.setPreferredSize(new java.awt.Dimension(70, 25));
+        jToggleButton5.setPreferredSize(new java.awt.Dimension(80, 25));
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton5ActionPerformed(evt);
@@ -230,7 +231,7 @@ public class TermoVista extends javax.swing.JFrame {
 
         jToggleButton6.setText("20-23");
         jToggleButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton6.setPreferredSize(new java.awt.Dimension(70, 25));
+        jToggleButton6.setPreferredSize(new java.awt.Dimension(80, 25));
         jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton6ActionPerformed(evt);
@@ -240,10 +241,13 @@ public class TermoVista extends javax.swing.JFrame {
 
         jPanel5.add(jPanelSelectHoras);
 
+        jLabelHoras.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabelHoras.setText("Horas:");
 
-        jSpinnerSelectHora.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        jSpinnerSelectHora.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinnerSelectHora.setModel(new javax.swing.SpinnerNumberModel());
 
+        jButtonIniciar.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jButtonIniciar.setText("Iniciar");
         jButtonIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,16 +255,22 @@ public class TermoVista extends javax.swing.JFrame {
             }
         });
 
+        jLabelMinima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabelMinima.setText("Mínima:");
 
+        jSpinnerMinima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinnerMinima.setModel(new javax.swing.SpinnerNumberModel(5, 5, 18, 1));
         jSpinnerMinima.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinnerMinimaStateChanged(evt);
             }
         });
 
+        jLabelMaxima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jLabelMaxima.setText("Máxima:");
 
+        jSpinnerMaxima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jSpinnerMaxima.setModel(new javax.swing.SpinnerNumberModel(19, 19, 30, 1));
         jSpinnerMaxima.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinnerMaximaStateChanged(evt);
@@ -289,7 +299,7 @@ public class TermoVista extends javax.swing.JFrame {
                         .addComponent(jLabelMaxima)
                         .addGap(5, 5, 5)
                         .addComponent(jSpinnerMaxima, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         jPanelSelectInitLayout.setVerticalGroup(
             jPanelSelectInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +320,7 @@ public class TermoVista extends javax.swing.JFrame {
                         .addGroup(jPanelSelectInitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelMinima)
                             .addComponent(jLabelMaxima))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         jPanel5.add(jPanelSelectInit);

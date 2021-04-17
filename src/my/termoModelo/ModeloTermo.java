@@ -34,12 +34,13 @@ public class ModeloTermo {
         LocalDateTime localDate = LocalDateTime.now();
         horas = localDate.getHour();
         minutos = localDate.getMinute();
+        
         programas = new ArrayList<>();
         
-        for(int i=0; i<3;i++){
+        for(int i = 0; i < 3; i++){
             
             programas.add(new Programa());   
-        }
+        }   
     }
     
     /**
@@ -138,5 +139,6 @@ public class ModeloTermo {
     public int getMinutos(){
         return this.minutos;
     }
+    
     
 }
