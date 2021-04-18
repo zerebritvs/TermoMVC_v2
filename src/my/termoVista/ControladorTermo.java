@@ -10,6 +10,7 @@ import java.awt.Component;
 import javax.swing.JPanel;
 import my.termoModelo.ModeloTermo;
 import javax.swing.ImageIcon;
+import javax.swing.JSpinner;
 import javax.swing.JToggleButton;
 import my.termo.WindowStateMachine;
 import my.termoModelo.Programa;
@@ -73,7 +74,9 @@ public class ControladorTermo {
         miVista.getLabelIcono().setIcon(new ImageIcon(getClass().getResource("/my/termoVista/Vacio.png")));
         
         miVista.getToggleButtonOn().setText("ON  ");
-
+        
+        ((JSpinner.DefaultEditor)miVista.getSpinnerMaxima().getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor)miVista.getSpinnerMinima().getEditor()).getTextField().setEditable(false);
         
         for(int i = 0; i < miModelo.getPrograma().size(); i++){
             miVista.getComboBoxPrograms().addItem(miModelo.getPrograma().get(i)); 
@@ -243,6 +246,25 @@ public class ControladorTermo {
             
         }
         
+    }
+    
+    /**
+     * Comprueba si las temperaturas son válidas
+     */
+    public void comprobarMinMax(){
+        
+        int max = (Integer)miVista.getSpinnerMaxima().getValue();
+        int min = (Integer)miVista.getSpinnerMinima().getValue();
+        int resta = max - min;
+        
+        if(min == max){
+          
+          miVista.getSpinnerMinima().setValue(max - 1);
+          
+        }else if(min > max){
+            
+            miVista.getSpinnerMaxima().setValue(max - resta);
+        }
     }
     
     /**

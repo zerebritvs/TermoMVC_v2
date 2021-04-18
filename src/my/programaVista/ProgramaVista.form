@@ -270,9 +270,12 @@
                       <Font name="Ubuntu" size="18" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="19" maximum="30" minimum="19" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                      <SpinnerModel initial="25" maximum="30" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSpinner1StateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="jSpinner2">
                   <Properties>
@@ -280,9 +283,12 @@
                       <Font name="Ubuntu" size="18" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="5" maximum="18" minimum="5" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                      <SpinnerModel initial="19" maximum="30" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSpinner2StateChanged"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton4">
                   <Properties>

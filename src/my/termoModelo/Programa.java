@@ -32,8 +32,8 @@ public class Programa {
             botones.add(false);
         }
         
-        temps.add(0, 5);
-        temps.add(1, 19);
+        temps.add(0, 19);
+        temps.add(1, 25);
     }
     
     /**

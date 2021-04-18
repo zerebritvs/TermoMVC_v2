@@ -7,6 +7,7 @@ package my.programaVista;
 
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JToggleButton;
 import my.termo.WindowStateMachine;
 import my.termoModelo.ModeloTermo;
@@ -52,10 +53,33 @@ public class ProgramaControlador {
         setPanelEnabled(miVista.getJPanelMedio(), false);
         setPanelEnabled(miVista.getJPanelDerecha(), false);
         
+        ((JSpinner.DefaultEditor)miVista.getJSpinnerMax().getEditor()).getTextField().setEditable(false);
+        ((JSpinner.DefaultEditor)miVista.getJSpinnerMin().getEditor()).getTextField().setEditable(false);
+        
         for(int i = 0; i < miModelo.getPrograma().size(); i++){
             miVista.getJComboBoxProgramas().addItem(miModelo.getPrograma().get(i));   
         }
     }
+    
+    /**
+     * Comprueba si las temperaturas son válidas
+     */
+    public void comprobarMinMax(){
+        
+        int max = (Integer)miVista.getJSpinnerMax().getValue();
+        int min = (Integer)miVista.getJSpinnerMin().getValue();
+        int resta = max - min;
+        
+        if(min == max){
+          
+          miVista.getJSpinnerMin().setValue(max - 1);
+          
+        }else if(min > max){
+            
+            miVista.getJSpinnerMin().setValue(max - resta);
+        }
+    }
+    
     
     /**
      * Cambia el nombre del programa selecionado
@@ -119,8 +143,8 @@ public class ProgramaControlador {
         miVista.getJButtonGuarda().setText("Guardado");
         
         miVista.getJTextFieldNombreAdd().setText("Programa");
-        miVista.getJSpinnerMax().setValue(19);
-        miVista.getJSpinnerMin().setValue(5);
+        miVista.getJSpinnerMax().setValue(25);
+        miVista.getJSpinnerMin().setValue(19);
         
         miVista.getJToggleButton1().setSelected(false);
         miVista.getJToggleButton2().setSelected(false);

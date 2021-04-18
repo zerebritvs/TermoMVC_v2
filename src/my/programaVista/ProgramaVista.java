@@ -172,10 +172,20 @@ public class ProgramaVista extends javax.swing.JFrame {
         jLabel7.setText("Tª Mínima:");
 
         jSpinner1.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(19, 19, 30, 1));
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(25, 1, 30, 1));
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
 
         jSpinner2.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(5, 5, 18, 1));
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(19, 0, 30, 1));
+        jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner2StateChanged(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
         jButton4.setText("Guardar Programa");
@@ -361,6 +371,14 @@ public class ProgramaVista extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        miControl.comprobarMinMax();
+    }//GEN-LAST:event_jSpinner1StateChanged
+
+    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
+        miControl.comprobarMinMax();
+    }//GEN-LAST:event_jSpinner2StateChanged
 
     
     /**

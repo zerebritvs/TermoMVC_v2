@@ -260,7 +260,7 @@ public class TermoVista extends javax.swing.JFrame {
         jLabelMinima.setText("Mínima:");
 
         jSpinnerMinima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jSpinnerMinima.setModel(new javax.swing.SpinnerNumberModel(5, 5, 18, 1));
+        jSpinnerMinima.setModel(new javax.swing.SpinnerNumberModel(19, 0, 30, 1));
         jSpinnerMinima.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinnerMinimaStateChanged(evt);
@@ -271,7 +271,7 @@ public class TermoVista extends javax.swing.JFrame {
         jLabelMaxima.setText("Máxima:");
 
         jSpinnerMaxima.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
-        jSpinnerMaxima.setModel(new javax.swing.SpinnerNumberModel(19, 19, 30, 1));
+        jSpinnerMaxima.setModel(new javax.swing.SpinnerNumberModel(25, 1, 30, 1));
         jSpinnerMaxima.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jSpinnerMaximaStateChanged(evt);
@@ -440,10 +440,12 @@ public class TermoVista extends javax.swing.JFrame {
 
     private void jSpinnerMinimaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerMinimaStateChanged
         miControl.editTemperatura(0);
+        miControl.comprobarMinMax();
     }//GEN-LAST:event_jSpinnerMinimaStateChanged
 
     private void jSpinnerMaximaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinnerMaximaStateChanged
         miControl.editTemperatura(1);
+        miControl.comprobarMinMax();
     }//GEN-LAST:event_jSpinnerMaximaStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
