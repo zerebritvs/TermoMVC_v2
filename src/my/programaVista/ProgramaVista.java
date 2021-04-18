@@ -14,7 +14,8 @@ import javax.swing.JToggleButton;
 import my.termoModelo.ModeloTermo;
 
 /**
- *
+ * Clase ProgramaVista del patrón de diseño MVC
+ * 
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */
@@ -27,6 +28,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Constructor de ProgramaVista
+     * @param miModelo
      */
     public ProgramaVista(ModeloTermo miModelo) {
         
@@ -371,7 +373,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Obtiene el jPanelDerecha
-     * @return jPanelDerecha
+     * @return jPanel6
      */
     public JPanel getJPanelDerecha(){
         return jPanel6;
@@ -379,7 +381,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Obtiene el jComboBoxProgramas
-     * @return jComboBoxProgramas
+     * @return jComboBox1
      */
     public JComboBox getJComboBoxProgramas(){
         return jComboBox1;
@@ -387,7 +389,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Obtiene el jTextFieldNombre
-     * @return jTextFieldNombre
+     * @return jTextField1
      */
     public JTextField getJTextFieldNombre(){
         return jTextField1;
@@ -395,7 +397,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Obtiene el jTextFieldNombreAdd
-     * @return jTextFieldNombreAdd
+     * @return jTextField2
      */
     public JTextField getJTextFieldNombreAdd(){
         return jTextField2;
@@ -419,7 +421,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Obtiene el jButtonNombre
-     * @return jButtonNombre
+     * @return jButton3
      */
     public JButton getJButtonNombre(){
         return jButton3;
@@ -427,7 +429,7 @@ public class ProgramaVista extends javax.swing.JFrame {
     
     /**
      * Obtiene el jButtonGuarda
-     * @return jButtonGuarda
+     * @return jButton4
      */
     public JButton getJButtonGuarda(){
         return jButton4;

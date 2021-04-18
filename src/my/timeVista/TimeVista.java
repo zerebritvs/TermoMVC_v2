@@ -10,7 +10,7 @@ import javax.swing.JSpinner;
 import my.termoModelo.ModeloTermo;
 
 /**
- *
+ * Clase TimeVista del patrón de diseño MVC
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */
@@ -23,6 +23,7 @@ public class TimeVista extends javax.swing.JFrame {
     
     /**
      * Constructor de TimeVista
+     * @param miModelo
      */
     public TimeVista(ModeloTermo miModelo) {
         

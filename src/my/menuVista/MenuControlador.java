@@ -9,7 +9,7 @@ import my.termo.WindowStateMachine;
 import my.termoModelo.ModeloTermo;
 
 /**
- *
+ * Clase MenuControlador del patrón de diseño MVC
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */
@@ -28,14 +28,23 @@ public class MenuControlador {
         miModelo = m;
     }
     
+    /**
+     * Cierra Menu y abre Time
+     */
     public void goTime(){
         WindowStateMachine.goTime();
     }
     
+    /**
+     * Cierra Menu y abre Programa
+     */
     public void goPrograma(){
         WindowStateMachine.goPrograma();
     }
     
+    /**
+     * Cierra Menu y abre Termo
+     */
     public void goTermo(){
         WindowStateMachine.goTermo();
     }

@@ -9,7 +9,7 @@ import my.termo.WindowStateMachine;
 import my.termoModelo.ModeloTermo;
 
 /**
- *
+ * Clase TimeControlador del patrón de diseño MVC
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */

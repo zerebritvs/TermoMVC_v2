@@ -15,7 +15,7 @@ import javax.swing.JToggleButton;
 import my.termoModelo.ModeloTermo;
 
 /**
- * Clase VistaUI del patrón de diseño MVC
+ * Clase TermoVista del patrón de diseño MVC
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */
@@ -25,6 +25,7 @@ public class TermoVista extends javax.swing.JFrame {
     
     /**
      * Constructor de TermoVista
+     * @param miModelo
      */
     public TermoVista(ModeloTermo miModelo) {
         

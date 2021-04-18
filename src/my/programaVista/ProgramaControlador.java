@@ -13,14 +13,13 @@ import my.termoModelo.ModeloTermo;
 import my.termoModelo.Programa;
 
 /**
- *
+ * Clase Programa Controlador del diseño MVC
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */
 public class ProgramaControlador {
     private ProgramaVista miVista;
     private ModeloTermo miModelo;
-    
     
     /**
      * Contructor de ProgramaControlador
@@ -56,13 +55,13 @@ public class ProgramaControlador {
         for(int i = 0; i < miModelo.getPrograma().size(); i++){
             miVista.getJComboBoxProgramas().addItem(miModelo.getPrograma().get(i));   
         }
-          
     }
     
     /**
      * Cambia el nombre del programa selecionado
      */
     public void cambiaNombre(){
+        
         int index = miVista.getJComboBoxProgramas().getSelectedIndex();
         String  nuevoNombre = miVista.getJTextFieldNombre().getText();
         for(int i = 0; i < miModelo.getPrograma().size(); i++){
@@ -72,6 +71,7 @@ public class ProgramaControlador {
         }
         miVista.getJComboBoxProgramas().updateUI();
     }
+    
     /**
      * Habilita la zona para añadir nuevo programa
      */
@@ -112,7 +112,6 @@ public class ProgramaControlador {
             }
         }
         
-        
         miVista.getJComboBoxProgramas().addItem(nuevoPrograma);
         
         miVista.getJComboBoxProgramas().updateUI();
@@ -133,8 +132,6 @@ public class ProgramaControlador {
         setPanelEnabled(miVista.getJPanelMedio(), false);
         setPanelEnabled(miVista.getJPanelDerecha(), false);
         
-        
-    
     }
     
     /**

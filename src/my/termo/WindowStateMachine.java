@@ -13,7 +13,8 @@ import my.termoVista.TermoVista;
 import my.timeVista.TimeVista;
 
 /**
- *
+ * Máquina de estados
+ * 
  * @author Juan Antonio Pagés
  * @author Fernando San José
  */
@@ -21,6 +22,10 @@ public class WindowStateMachine {
     private static JFrame currentState;
     private static ModeloTermo miModelo;
     
+    /**
+     * Constructor de WindowStateMachine
+     * @param modelo 
+     */
     public WindowStateMachine(ModeloTermo modelo){
         this.miModelo = modelo;
         java.awt.EventQueue.invokeLater(new Runnable() {
